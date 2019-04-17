@@ -25,7 +25,7 @@ public class Pile {
     private Boolean loadTest;
 
     @ManyToOne
-    private Engineer engineer;
+    private Investition investition;
 
     @Override
     public String toString() {

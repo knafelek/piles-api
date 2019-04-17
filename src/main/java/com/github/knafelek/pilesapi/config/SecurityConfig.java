@@ -31,12 +31,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { //żeby nie t
                 .passwordEncoder(passwordEncoder())
                 .usersByUsernameQuery("SELECT username, password, true FROM users WHERE username = ?") //3 pole czy jest aktywny a nie mamy takiego pola więc domyślnie true
                 .authoritiesByUsernameQuery("SELECT username, 'ROLE_USER' FROM users WHERE username = ?"); //nie ma tabelki z rolami stąd USER_USER na sztywno
+
+/*        auth.inMemoryAuthentication()//na potrzeby testów konfiguracja
+                .withUser("user").password(passwordEncoder().encode("pass")).roles("USER")
+                .and()
+                .withUser("admin").password(passwordEncoder().encode("pass")).roles("ADMIN");*/
     }
 
     @Override
     protected void configure(HttpSecurity http) throws Exception { //reguły czytane od góry do dołu! dlatego od pojedynczych stron do globalnych!
         http.authorizeRequests()
-                .antMatchers("/register").permitAll()
+                .antMatchers("/register", "/pile", "/pile/**", "/checkSS.jsp").permitAll()//POTEM ZMIENIĆ DOSTĘPNOŚĆ PILE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
                 .antMatchers("/login").anonymous()
                 .antMatchers("/user", "/user/**").hasRole("USER")
                 .antMatchers("/admin", "/admin/**").hasRole("ADMIN")

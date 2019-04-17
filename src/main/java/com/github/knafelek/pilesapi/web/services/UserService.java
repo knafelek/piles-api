@@ -12,9 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import java.util.Optional;
 
-import static com.github.knafelek.pilesapi.web.services.Converters.convertToUser;
-import static com.github.knafelek.pilesapi.web.services.Converters.convertToUserDTO;
-
 @Service
 public class UserService {
 
