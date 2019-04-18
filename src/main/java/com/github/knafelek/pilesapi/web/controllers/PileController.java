@@ -52,4 +52,9 @@ public class PileController {
                 "Pal Vibro");
     }
 
+/*    @ModelAttribute("loadTest")
+    public List<String> checkIfLoadTest(){
+        return Arrays.asList("tak", "nie");
+    }*/
+
 }
