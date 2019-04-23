@@ -4,7 +4,6 @@ import com.github.knafelek.pilesapi.web.dtos.UserDTO;
 import com.github.knafelek.pilesapi.web.services.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.security.Principal;
@@ -23,9 +22,13 @@ public class HomePageController {
         return "home-page";
     }
 
+/*    @GetMapping("/user")
+    public String prepareUserPage() {
+        return "user-page";
+    }*/
+
     @GetMapping("/user") //zwracanie zalogowanego użytkownika
-    @ResponseBody
-    public UserDTO prepareHomePage (Principal principal){
+    public UserDTO prepareUserPage (Principal principal){
         UserDTO user = service.findUser(principal.getName());
         return user;
     }

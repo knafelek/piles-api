@@ -23,4 +23,11 @@ public class InvestitionController {
         return "investition-form";
     }
 
+/*    @PostMapping("/form")
+    public String showInvestitions(@Valid @ModelAttribute("investition") Investition investition, BindingResult result){
+        if (result.hasErrors()) {
+            return "investition-form";
+        }
+        return "investitions-page";
+    }*/
 }

@@ -30,7 +30,7 @@ public class RegistrationController {
     }
 
     @PostMapping
-    public String prc(@Valid @ModelAttribute ("registrationForm") RegistrationFormDTO form, BindingResult result){ //tu trzeba powtórzyć nazwę bo by szukał registrationFormDTO
+    public String processRegistrationPage(@Valid @ModelAttribute ("registrationForm") RegistrationFormDTO form, BindingResult result){ //tu trzeba powtórzyć nazwę bo by szukał registrationFormDTO
         if(result.hasErrors()){
             return "registration-page";
         }
@@ -41,11 +41,11 @@ public class RegistrationController {
         //ta walidacja wymaga kontaktu z bazą danych dlatego na końcu:
         if (!checkIfUserNameAvailable(form)){
             result.rejectValue("username", null, "Nazwa użytkownika zajęta");
-            return "redirect:/index.html";
+            return "registration-page";
         }
         //konwersja registrationformDTO na user (encja) + wywołąnie userRepository.save() - zamiaste tego:
         userService.registerUser(form);
-        return "redirect:/index.html";
+        return "redirect:/";
     }
 
     private boolean checkIfUserNameAvailable(RegistrationFormDTO form) {

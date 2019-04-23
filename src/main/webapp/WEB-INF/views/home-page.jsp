@@ -43,10 +43,10 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> REJESTRACJA </a>
+                    <a class="nav-link" href="/register"> REJESTRACJA </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> ZALOGUJ </a>
+                    <a class="nav-link" href="/login"> ZALOGUJ </a>
                 </li>
                 <li class="nav-item disabled">
                     <a class="nav-link" href="#"> WYLOGUJ </a>
@@ -60,12 +60,32 @@
 <div class = "container">
 
     <div class="row">
-        <div class="col-sm-6">
-
+        <div class="col-sm-4"><br/>
+            <figure>
+                <img src="/media/images/palowanie.gif" class="img-fluid images" alt="">
+            </figure>
         </div>
 
-        <div class="col-sm-6">
-            
+        <div class="col-sm-8">
+            <span>
+                <br>
+                <h1> pilesAPI </h1>
+                <br/>
+                <h4>Aplikacja do obliczeń geotechnicznych</h4>
+                <br/>
+                <h5>Obliczenia geotechniczne</h5>
+                    <ul>
+                        <li>Obliczanie nośności pala wciskanego obciążonego głównie pionowo</li>
+                        <li>Wyznaczanie wymaganej długości pala dla wymaganej nośności</li>
+                    </ul>
+                <h5>Przechowywanie danych</h5>
+                    <ul>
+                        <li>Obsługa wielu inwestycji budowlanych</li>
+                        <li>Archiwiziwanie danych dotyczących robót palowych dla danej inwestycji</li>
+                    </ul>
+
+                <br><h4>ZALOGUJ SIĘ LUB ZAREJESTRUJ!</h4>
+            </span>
         </div>
     </div>
 

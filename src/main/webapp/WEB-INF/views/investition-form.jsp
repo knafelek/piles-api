@@ -56,7 +56,7 @@
 </header>
 <div class = "container">
     <form>
-        <p>UZUPEŁNIJ DANE INWESTYCJI:<br/>
+        <p><br><b>UZUPEŁNIJ DANE INWESTYCJI:</b><br/>
         <p>Numer projektu:<br/>
             <input type="text" name="investitionSignature"/></p>
         <p>Nazwa inwestycji: <br/>

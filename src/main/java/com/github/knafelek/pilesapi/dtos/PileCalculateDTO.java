@@ -25,5 +25,6 @@ public class PileCalculateDTO {
     private String zag;
     private String zwg;
     private String type;
+    private String ground;
 
 }

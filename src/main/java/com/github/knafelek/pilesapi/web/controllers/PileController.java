@@ -52,9 +52,11 @@ public class PileController {
                 "Pal Vibro");
     }
 
-/*    @ModelAttribute("loadTest")
-    public List<String> checkIfLoadTest(){
-        return Arrays.asList("tak", "nie");
-    }*/
-
+    @ModelAttribute("ground")
+    public List<String> checkGround(){
+        return Arrays.asList("Żwir, pospółka",
+                "Piasek gruby i średni",
+                "Piasek drobny",
+                "Piasek pylasty");
+    }
 }

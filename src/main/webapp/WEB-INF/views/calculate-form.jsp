@@ -11,7 +11,7 @@
 </head>
 <body>
 <header>
-    <nav class="navbar navbar-light bg-info navbar-expand-md">
+    <nav class="navbar navbar-light bg-info navbar-expand-lg">
 
         <a class="navbar-brand" href="#"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
 
@@ -38,7 +38,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="#"> Pokaż tabele pali </a>
+                        <a class="dropdown-item" href="#"> Pokaż tabelę pali </a>
                     </div>
                 </li>
                 <li class="nav-item disabled">
@@ -70,7 +70,7 @@
                 <input type="number" min="0" step="0.1" name="diameter"/> m</p>
 
             <p>Wymagana nośność: <br/>
-                <input type="text" name="bearingCapacity"/> MPa</p>
+                <input type="text" name="bearingCapacity"/> kN</p>
 
             <p>Typ pala: <br/>
                 <form:select path="type">
@@ -83,6 +83,11 @@
         </div>
         <div class="col-sm-6">
             <p><br/><b>UZUPEŁNIJ PARAMETRY GRUNTU:</b><br/>
+
+            <p>Rodzaj gruntu: <br/>
+                <form:select path="ground">
+                    <form:options items="${ground}"/>
+                </form:select>
 
             <p>Poziom zwierciadła wód gruntowych: <br/>
                 <input type="text" name="zwg"/> m.p.p.t</p>

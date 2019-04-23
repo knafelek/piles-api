@@ -21,9 +21,9 @@
         <div class = "collapse navbar-collapse" id="mainmenu">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> STRONA GŁÓWNA </a>
+                    <a class="nav-link" href="/home"> STRONA GŁÓWNA </a>
                 </li>
-                <li class="nav-item">
+                <li class="nav-item disabled">
                     <a class="nav-link" href="#"> OBLICZENIA </a>
                 </li>
                 <li class="nav-item dropdown disabled">
@@ -34,10 +34,10 @@
                         <a class="dropdown-item" href="#"> Usuń inwestycję </a>
                     </div>
                 </li>
-                <li class="nav-item dropdown disabled">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="#"> Pokaż tabele pali </a>
+                        <a class="dropdown-item" href="#"> Pokaż tabelę pali </a>
                     </div>
                 </li>
                 <li class="nav-item active">

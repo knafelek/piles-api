@@ -3,9 +3,9 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <title>$Title$</title>
+    <title>Investitions Page</title>
 </head>
 <body>
-$END$
+
 </body>
 </html>
