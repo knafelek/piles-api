@@ -12,7 +12,7 @@
 <header>
     <nav class="navbar navbar-light bg-info navbar-expand-md">
 
-        <a class="navbar-brand" href="#"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
+        <a class="navbar-brand" href="http://localhost:8090/home"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
             <span class="navbar-toggler-icon"></span>
@@ -29,9 +29,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> MOJE INWESTYCJE </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="#"> Pokaż wszystkie inwestycje </a>
-                        <a class="dropdown-item" href="#"> Dodaj nową inwestycję </a>
-                        <a class="dropdown-item" href="#"> Usuń inwestycję </a>
+                        <a class="dropdown-item" href="/investition/page"> Pokaż wszystkie inwestycje </a>
+                        <a class="dropdown-item" href="/investition/form"> Dodaj nową inwestycję </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -41,13 +40,13 @@
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> REJESTRACJA </a>
+                    <a class="nav-link disabled" href="#"> REJESTRACJA </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> ZALOGUJ </a>
+                    <a class="nav-link disabled" href="#"> ZALOGUJ </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> WYLOGUJ </a>
+                    <a class="nav-link" href="/logout"> WYLOGUJ </a>
                 </li>
             </ul>
         </div>
@@ -55,16 +54,16 @@
     </nav>
 </header>
 <div class = "container">
-    <form>
+    <form:form modelAttribute="investition" method="post">
         <p><br><b>UZUPEŁNIJ DANE INWESTYCJI:</b><br/>
         <p>Numer projektu:<br/>
-            <input type="text" name="investitionSignature"/></p>
+            <input type="text" name="investitionSignature"/> <form:errors path="investitionSignature" cssClass="error"/></p>
         <p>Nazwa inwestycji: <br/>
-            <input type="text" name="investitionTitle"/></p>
+            <input type="text" name="investitionTitle"/> <form:errors path="investitionTitle" cssClass="error"/></p>
         <p>Opis inwestycji: <br/>
-            <input type="text" name="description"/></p>
+            <input type="text" name="investitionDecription"/> <form:errors path="investitionDecription" cssClass="error"/></p>
         <input type="submit" value="Zapisz" class="btn"/>
-    </form>
+    </form:form>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

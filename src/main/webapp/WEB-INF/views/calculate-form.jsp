@@ -13,7 +13,7 @@
 <header>
     <nav class="navbar navbar-light bg-info navbar-expand-lg">
 
-        <a class="navbar-brand" href="#"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
+        <a class="navbar-brand" href="http://localhost:8090/home"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
             <span class="navbar-toggler-icon"></span>
@@ -22,17 +22,16 @@
         <div class = "collapse navbar-collapse" id="mainmenu">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> STRONA GŁÓWNA </a>
+                    <a class="nav-link" href="/user"> STRONA GŁÓWNA </a>
                 </li>
                 <li class="nav-item active">
-                    <a class="nav-link" href="#"> OBLICZENIA </a>
+                    <a class="nav-link" href="/pile/calculate"> OBLICZENIA </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> MOJE INWESTYCJE </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
                         <a class="dropdown-item" href="#"> Pokaż wszystkie inwestycje </a>
                         <a class="dropdown-item" href="#"> Dodaj nową inwestycję </a>
-                        <a class="dropdown-item" href="#"> Usuń inwestycję </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -41,11 +40,11 @@
                         <a class="dropdown-item" href="#"> Pokaż tabelę pali </a>
                     </div>
                 </li>
-                <li class="nav-item disabled">
-                    <a class="nav-link" href="#"> REJESTRACJA </a>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#"> REJESTRACJA </a>
                 </li>
-                <li class="nav-item disabled">
-                    <a class="nav-link" href="#"> ZALOGUJ </a>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#"> ZALOGUJ </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"> WYLOGUJ </a>
@@ -58,19 +57,18 @@
 
 <div class = "container">
 <form:form modelAttribute="pile" method="post">
-    <form:errors path="*" cssClass="error"/>
     <div class="row">
         <div class="col-sm-6">
             <p><br><b>UZUPEŁNIJ PARAMETRY PALA:</b><br/>
 
             <p>Sygnatura pala:<br/>
-                <input type="text" name="signature"/></p>
+                <input type="text" name="signature"/> <form:errors path="signature" cssClass="error"/></p>
 
             <p>Średnica pala: <br/>
-                <input type="number" min="0" step="0.1" name="diameter"/> m</p>
+                <input type="number" min="0.1" step="0.1" name="diameter"/> m <form:errors path="diameter" cssClass="error"/></p>
 
             <p>Wymagana nośność: <br/>
-                <input type="text" name="bearingCapacity"/> kN</p>
+                <input type="text" name="bearingCapacity"/> kN <form:errors path="bearingCapacity" cssClass="error"/></p>
 
             <p>Typ pala: <br/>
                 <form:select path="type">
@@ -90,7 +88,7 @@
                 </form:select>
 
             <p>Poziom zwierciadła wód gruntowych: <br/>
-                <input type="text" name="zwg"/> m.p.p.t</p>
+                <input type="text" name="zwg"/> m.p.p.t <form:errors path="zwg" cssClass="error"/></p>
 
             <p>Wskaźnik zagęszczenia gruntów niespoistych ID: <br/>
                 <form:select path="zag">

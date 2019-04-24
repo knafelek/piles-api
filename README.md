@@ -2,7 +2,7 @@
 
 
 
-#####Aplikacja do obliczeń geotechnicznych
+### Aplikacja do obliczeń geotechnicznych
 
 ---
 

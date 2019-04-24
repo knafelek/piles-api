@@ -5,11 +5,12 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <head>
-    <title>Calculate Result</title>
+    <title>Investitions Saved</title>
     <link rel="stylesheet" href="/media/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/media/css/main.css"/>
 </head>
 <body>
+
 <header>
     <nav class="navbar navbar-light bg-info navbar-expand-md">
 
@@ -30,8 +31,8 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> MOJE INWESTYCJE </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="#"> Pokaż wszystkie inwestycje </a>
-                        <a class="dropdown-item" href="#"> Dodaj nową inwestycję </a>
+                        <a class="dropdown-item" href="/investition/page"> Pokaż wszystkie inwestycje </a>
+                        <a class="dropdown-item" href="/investition/form"> Dodaj nową inwestycję </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -47,7 +48,7 @@
                     <a class="nav-link disabled" href="#"> ZALOGUJ </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> WYLOGUJ </a>
+                    <a class="nav-link" href="/logout"> WYLOGUJ </a>
                 </li>
             </ul>
         </div>
@@ -55,18 +56,16 @@
 </header>
 
 <div class = "container">
-    <br><h1>WYNIK OBLICZEŃ</h1>
-    <h2>Wyznaczona długość pala dla zadanego obciążenia wynosi ${pileLength} m</h2><br>
+    <br><h1>ZAPISANO INWESTYCJĘ!</h1>
 
-    <div class="row">
-        <div class="col-sm-6">
-            <a href="/pile/calculate"><input type="submit" value="POWRÓT DO OBLICZEŃ" class="btn2"/></a>
+        <div class="row">
+            <div class="col-sm-6">
+                <a href="/investition/form"><input type="submit" value="DODAJ KOLEJNĄ INWESTYCJĘ" class="btn2"/></a>
+            </div>
+            <div class="col-sm-6">
+                <a href="/investition/page"><input type="submit" value="MOJE INWESTYCJE" class="btn2" /></a>
+            </div>
         </div>
-        <div class="col-sm-6">
-            <a href="#"><input type="submit" value="ZAPISZ DO BAZY DANYCH" class="btn2" /></a>
-        </div>
-    </div>
-
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

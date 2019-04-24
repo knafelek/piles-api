@@ -12,7 +12,7 @@
 <header>
     <nav class="navbar navbar-light bg-info navbar-expand-md">
 
-        <a class="navbar-brand" href="#"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
+        <a class="navbar-brand" href="http://localhost:8090/home"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
             <span class="navbar-toggler-icon"></span>
@@ -23,19 +23,18 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/home"> STRONA GŁÓWNA </a>
                 </li>
-                <li class="nav-item disabled">
-                    <a class="nav-link" href="#"> OBLICZENIA </a>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#"> OBLICZENIA </a>
                 </li>
-                <li class="nav-item dropdown disabled">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> MOJE INWESTYCJE </a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle disabled" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> MOJE INWESTYCJE </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
                         <a class="dropdown-item" href="#"> Pokaż wszystkie inwestycje </a>
                         <a class="dropdown-item" href="#"> Dodaj nową inwestycję </a>
-                        <a class="dropdown-item" href="#"> Usuń inwestycję </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
+                    <a class="nav-link dropdown-toggle disabled" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
                         <a class="dropdown-item" href="#"> Pokaż tabelę pali </a>
                     </div>
@@ -56,12 +55,11 @@
 </header>
 <div class = "container">
 <form:form modelAttribute="registrationForm" method="post">
-    <form:errors path="*" cssClass="error"/>
-    <p>Nazwa użytkownika:<br/><form:input path="username"/></p>
-    <p>Imię:<br/><form:input path="firstName"/></p>
-    <p>Nazwisko:<br/><form:input path="lastName"/></p>
-    <p>Hasło:<br/><form:input path="password"/></p>
-    <p>Powtórz hasło:<br/><form:input path="confirmedPassword"/></p>
+    <p>Nazwa użytkownika:<br/><form:input path="username"/><form:errors path="username" cssClass="error"/></p>
+    <p>Imię:<br/><form:input path="firstName"/><form:errors path="firstName" cssClass="error"/></p>
+    <p>Nazwisko:<br/><form:input path="lastName"/><form:errors path="lastName" cssClass="error"/></p>
+    <p>Hasło:<br/><form:input path="password"/><form:errors path="password" cssClass="error"/></p>
+    <p>Powtórz hasło:<br/><form:input path="confirmedPassword"/><form:errors path="username" cssClass="error"/></p>
     <input type="submit" value="Zarejestruj" class="btn">
 </form:form>
 </div>

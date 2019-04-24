@@ -45,7 +45,7 @@ public class RegistrationController {
         }
         //konwersja registrationformDTO na user (encja) + wywołąnie userRepository.save() - zamiaste tego:
         userService.registerUser(form);
-        return "redirect:/";
+        return "redirect:/login";
     }
 
     private boolean checkIfUserNameAvailable(RegistrationFormDTO form) {

@@ -41,9 +41,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter { //żeby nie t
     @Override
     protected void configure(HttpSecurity http) throws Exception { //reguły czytane od góry do dołu! dlatego od pojedynczych stron do globalnych!
         http.authorizeRequests()
-                .antMatchers("/register", "/pile", "/pile/**", "/checkSS.jsp", "/home/**", "/investition/**", "/user-page").permitAll()//POTEM ZMIENIĆ DOSTĘPNOŚĆ PILE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-                .antMatchers("/login").anonymous()
-                .antMatchers("/user", "/user/**").hasRole("USER")
+                .antMatchers("/register", "/home/**", "/home").permitAll()//POTEM ZMIENIĆ DOSTĘPNOŚĆ PILE!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+                .antMatchers("/login", "/home/**", "/home").anonymous()
+                .antMatchers("/user", "/user/**", "/pile", "/pile/**", "/checkSS.jsp","/investition", "/investition/**", "/user-page.jsp", "/home").hasRole("USER")
                 .antMatchers("/admin", "/admin/**").hasRole("ADMIN")
                 .antMatchers("/media/**").permitAll()//dostęp do obrazkówi itd miałyby tylko osoby zalogowane bez tego
                 .anyRequest().authenticated() //dla bezpieczesńtwa, musi być na końcu

@@ -3,8 +3,7 @@ package com.github.knafelek.pilesapi.dtos;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.hibernate.validator.constraints.UniqueElements;
-
+import javax.persistence.Column;
 import javax.validation.constraints.*;
 
 @Data
@@ -15,9 +14,9 @@ public class PileCalculateDTO {
     @NotNull
     private Long signature;
     @Positive
-    //@Column(columnDefinition = "NUMERIC(15,2)")
+    @Column(columnDefinition = "NUMERIC(15,2)")
     private Double diameter;
-    //@Column(name="bearing_capacity", columnDefinition = "NUMERIC(25,2)")
+    @Column(name="bearing_capacity", columnDefinition = "NUMERIC(25,2)")
     @NotNull @Positive
     private Double bearingCapacity;
     private Boolean loadTest;

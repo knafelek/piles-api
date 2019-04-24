@@ -14,7 +14,7 @@
 <header>
     <nav class="navbar navbar-light bg-info navbar-expand-md">
 
-        <a class="navbar-brand" href="#"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
+        <a class="navbar-brand" href="http://localhost:8090/home"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Przełącznik nawigacji">
             <span class="navbar-toggler-icon"></span>
@@ -33,7 +33,6 @@
                         <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
                             <a class="dropdown-item" href="#"> Pokaż wszystkie inwestycje </a>
                             <a class="dropdown-item" href="#"> Dodaj nową inwestycję </a>
-                            <a class="dropdown-item" href="#"> Usuń inwestycję </a>
                         </div>
                 </li>
                 <li class="nav-item dropdown">
@@ -68,10 +67,10 @@
     <input type="submit" value="Zaloguj" class="btn"/><br><br>
 
     <c:if test="${param.error != null}">
-        <span> Nieprawidłowe dane logowania </span>
+        <span class="error"> <b> Nieprawidłowe dane logowania! </b> </span>
     </c:if>
     <c:if test="${param.logout != null}">
-        <span> <b> Zostałeś wylogowany! </b> </span>
+        <span class="error"> <b> Zostałeś wylogowany! </b> </span>
     </c:if>
 
 </form>
