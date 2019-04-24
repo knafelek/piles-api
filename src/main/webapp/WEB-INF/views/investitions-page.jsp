@@ -25,7 +25,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/user"> STRONA GŁÓWNA </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/pile/calculate"> OBLICZENIA </a>
                 </li>
                 <li class="nav-item dropdown active">
@@ -79,20 +79,6 @@
             </c:forEach>
     </table>
 </form:form>
-
-
-
-<%--    <h2>Wyznaczona długość pala dla zadanego obciążenia wynosi ${pileLength} m</h2><br>
-
-    <div class="row">
-        <div class="col-sm-6">
-            <a href="/pile/calculate"><input type="submit" value="POWRÓT DO OBLICZEŃ" class="btn2"/></a>
-        </div>
-        <div class="col-sm-6">
-            <a href="#"><input type="submit" value="ZAPISZ DO BAZY DANYCH" class="btn2" /></a>
-        </div>
-    </div>--%>
-
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

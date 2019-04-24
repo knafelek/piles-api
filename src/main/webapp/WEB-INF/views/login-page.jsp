@@ -23,10 +23,10 @@
         <div class = "collapse navbar-collapse" id="mainmenu">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#"> STRONA GŁÓWNA </a>
+                    <a class="nav-link disabled" href="#"> STRONA GŁÓWNA </a>
                 </li>
-                <li class="nav-item disabled">
-                    <a class="nav-link" href="#"> OBLICZENIA </a>
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="#"> OBLICZENIA </a>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> MOJE INWESTYCJE </a>
@@ -58,7 +58,7 @@
 
 <div class = "container">
 <form method ="post" action="/login">
-    <br>
+    <br><h1 align="center">LOGOWANIE</h1><br>
     <p>Nazwa użytkownika:<br/>
     <input type="text" name="username" required min="3" max="20"/></p>
     <p>Hasło: <br/>

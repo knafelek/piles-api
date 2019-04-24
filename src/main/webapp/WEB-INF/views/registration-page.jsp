@@ -54,6 +54,7 @@
     </nav>
 </header>
 <div class = "container">
+    <br><h1 align="center">REJESTRACJA NOWEGO UŻYTKOWNIKA</h1><br>
 <form:form modelAttribute="registrationForm" method="post">
     <p>Nazwa użytkownika:<br/><form:input path="username"/><form:errors path="username" cssClass="error"/></p>
     <p>Imię:<br/><form:input path="firstName"/><form:errors path="firstName" cssClass="error"/></p>
