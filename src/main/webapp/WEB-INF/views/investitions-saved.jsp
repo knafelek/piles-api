@@ -38,7 +38,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="#"> Pokaż tabele pali </a>
+                        <a class="dropdown-item" href="/pile/page"> Pokaż tabele pali </a>
                         <a class="dropdown-item" href="/pile/form"> Zapisz nowy pal </a>
                     </div>
                 </li>

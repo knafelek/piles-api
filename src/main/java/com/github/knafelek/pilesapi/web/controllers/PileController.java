@@ -13,10 +13,12 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/pile")
@@ -95,7 +97,7 @@ public class PileController {
         Investition investition = investitionRepository.getOne(investitionId);
         pile.setInvestition(investition);
         pileRepository.save(pile);
-        return "piles-page";
+        return "redirect:/pile/page";
     }
 
     @GetMapping("/page")
@@ -108,6 +110,47 @@ public class PileController {
     @ModelAttribute("allPiles")
     public List<Pile> findAllPiles (Principal principal){
         return pileRepository.getAllPilesByUsername(principal.getName());
+    }
+
+    //
+    @GetMapping("/edit")
+    public String editPile(Model model, Long id){
+        Pile pile = pileRepository.getOne(id);
+        model.addAttribute("pile", pile);
+        return "pile-form";
+    }
+
+    @PostMapping("/edit")
+    public String saveEditedPile(@Valid @ModelAttribute("pile") Pile pile,  BindingResult result, Long investitionId){
+        if (result.hasErrors()) {
+            return "pile-form";
+        }
+        Investition investition = investitionRepository.getOne(investitionId);
+        pile.setInvestition(investition);
+        pileRepository.save(pile);
+        return "redirect:/pile/page";
+    }
+
+    @GetMapping("/delete")
+    public String deletePile(Model model, Long id){
+        Pile pile = pileRepository.getOne(id);
+        pileRepository.delete(pile);
+        return"redirect:/pile/page";
+    }
+
+//    // ZAPYTAĆ
+//    @ModelAttribute("allInvestitionPiles")
+//    public List<Pile> findAllInvestitionsPiles (Long investitionId){
+//        Investition investition = investitionRepository.getOne(investitionId);
+//        return investition.getPilesList();
+//    }
+
+    @GetMapping("/list")
+    public String showInvestitionsPilesList(Long investitionId, Model model){
+        Investition investition = investitionRepository.getOne(investitionId);
+        model.addAttribute("investition", investition);
+        model.addAttribute("allInvestitionPiles", investition.getPilesList());
+        return "piles-list";
     }
 
 }

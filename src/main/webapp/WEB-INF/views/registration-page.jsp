@@ -29,14 +29,14 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle disabled" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> MOJE INWESTYCJE </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="#"> Pokaż wszystkie inwestycje </a>
-                        <a class="dropdown-item" href="#"> Dodaj nową inwestycję </a>
+                        <a class="dropdown-item" href="/investition/page"> Pokaż wszystkie inwestycje </a>
+                        <a class="dropdown-item" href="/investition/form"> Dodaj nową inwestycję </a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle disabled" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="#"> Pokaż tabelę pali </a>
+                        <a class="dropdown-item" href="/pile/page"> Pokaż tabelę pali </a>
                         <a class="dropdown-item" href="/pile/form"> Zapisz nowy pal </a>
                     </div>
                 </li>
@@ -47,7 +47,7 @@
                     <a class="nav-link" href="#"> ZALOGUJ </a>
                 </li>
                 <li class="nav-item disabled">
-                    <a class="nav-link" href="#"> WYLOGUJ </a>
+                    <a class="nav-link" href="/logout"> WYLOGUJ </a>
                 </li>
             </ul>
         </div>

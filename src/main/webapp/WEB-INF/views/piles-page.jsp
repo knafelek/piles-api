@@ -27,17 +27,17 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/pile/calculate"> OBLICZENIA </a>
                 </li>
-                <li class="nav-item dropdown active">
+                <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> MOJE INWESTYCJE </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
                         <a class="dropdown-item" href="/investition/page"> Pokaż wszystkie inwestycje </a>
                         <a class="dropdown-item" href="/investition/form"> Dodaj nową inwestycję </a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href=""> Pokaż tabelę pali </a>
+                        <a class="dropdown-item" href="/pile/page"> Pokaż tabelę pali </a>
                         <a class="dropdown-item" href="/pile/form"> Zapisz nowy pal </a>
                     </div>
                 </li>
@@ -59,7 +59,8 @@
         <br><h1 align="center">TABELA PALI</h1>
         <table border="3" width="100%" cellpadding="4" cellspacing="1" bgcolor="#f8f8ff">
             <tr>
-                <td align="center"><b>NUMER</b></td>
+                <td align="center"><b>INWESTYCJA</b></td>
+                <td align="center"><b>NUMER PALA</b></td>
                 <td align="center"><b>ŚREDNICA [m]</b></td>
                 <td align="center"><b>DŁUGOŚĆ [m]</b></td>
                 <td align="center"><b>NOŚNOŚĆ [kN]</b></td>
@@ -68,12 +69,13 @@
             </tr>
             <c:forEach items="${allPiles}" var="pile">
                 <tr>
+                    <td align="center"><c:out value="${pile.investition.investitionSignature}"/></td>
                     <td align="center"><c:out value="${pile.signature}"/></td>
                     <td><c:out value="${pile.diameter}"/></td>
                     <td><c:out value="${pile.length}"/></td>
                     <td><c:out value="${pile.bearingCapacity}"/></td>
-                    <td align="center"><input type="submit" value="EDYTUJ" class="btn3" /></td>
-                    <td align="center"><input type="submit" value="USUŃ" class="btn4" /></td>
+                    <td align="center"><a href="/pile/edit?id=${pile.id}"><input type="submit" value="EDYTUJ" class="btn3"/></a></td>
+                    <td align="center"><a href="/pile/delete?id=${pile.id}"><input type="submit" value="USUŃ" class="btn4" /></a></td>
                 </tr>
             </c:forEach>
         </table>

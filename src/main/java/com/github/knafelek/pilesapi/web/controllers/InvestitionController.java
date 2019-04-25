@@ -1,8 +1,10 @@
 package com.github.knafelek.pilesapi.web.controllers;
 
 import com.github.knafelek.pilesapi.domain.model.Investition;
+import com.github.knafelek.pilesapi.domain.model.Pile;
 import com.github.knafelek.pilesapi.domain.model.User;
 import com.github.knafelek.pilesapi.domain.repositories.InvestitionRepository;
+import com.github.knafelek.pilesapi.domain.repositories.PileRepository;
 import com.github.knafelek.pilesapi.domain.repositories.UserRepository;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,10 +24,12 @@ public class InvestitionController {
 
     private InvestitionRepository investitionRepository;
     private UserRepository userRepository;
+    private PileRepository pileRepository;
 
-    public InvestitionController(InvestitionRepository investitionRepository, UserRepository userRepository) {
+    public InvestitionController(InvestitionRepository investitionRepository, UserRepository userRepository, PileRepository pileRepository) {
         this.investitionRepository = investitionRepository;
         this.userRepository = userRepository;
+        this.pileRepository = pileRepository;
     }
 
     @GetMapping("/form")
@@ -53,32 +57,40 @@ public class InvestitionController {
         return user.getInvestitionsList();
     }
 
-/*
-    @GetMapping("/edit")
-    public String editInvestition(Model model, HttpServletRequest request){
-        String param = request.getParameter("id");
-        Long id = Long.parseLong(param);
-        Investition investition = investitionRepository.getOne(id);
-        model.addAttribute("investition", investition);
-        return "investition/form";
-    }
-*/
-/*
-    @GetMapping("/delete")
-    public String deleteInvestition(HttpServletRequest request){
-        String param = request.getParameter("id");
-        Long id = Long.parseLong(param);
-
-
-        return"redirect:list";
-    }
-*/
-
-
-
     @GetMapping("/page")
     public String showInvestitions(){
         return "investitions-page";
+    }
+
+
+    //ZAPYTAć
+    @GetMapping("/edit")
+    public String editInvestition(Model model, Long id){
+        Investition investition = investitionRepository.getOne(id);
+        model.addAttribute("investition", investition);
+        return "investition-form";
+    }
+
+    @PostMapping("/edit")
+    public String saveEditedInvestitionsaveInvestition(@Valid @ModelAttribute("investition") Investition investition, BindingResult result, Principal principal){
+        if (result.hasErrors()) {
+            return "investition-form";
+        }
+        User user = userRepository.findByUsername(principal.getName()).get();
+        investitionRepository.save(investition);
+        user.getInvestitionsList().add(investition);
+        userRepository.save(user);
+        return "redirect:/investition/page";
+    }
+
+    @GetMapping("/delete")
+    public String deleteInvestition(Model model, Long id){
+        Investition investition = investitionRepository.getOne(id);
+        for (Pile pile : investition.getPilesList()) {
+            pileRepository.delete(pile);
+        }
+        investitionRepository.delete(investition);
+        return"redirect:/investition/page";
     }
 
 }

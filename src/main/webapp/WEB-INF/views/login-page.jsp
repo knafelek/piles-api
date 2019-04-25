@@ -49,7 +49,7 @@
                     <a class="nav-link active" href="#"> ZALOGUJ </a>
                 </li>
                 <li class="nav-item disabled">
-                    <a class="nav-link" href="#"> WYLOGUJ </a>
+                    <a class="nav-link" href="/logout"> WYLOGUJ </a>
                 </li>
             </ul>
         </div>

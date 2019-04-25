@@ -5,13 +5,14 @@
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <head>
-    <title>Calculate Form</title>
+    <title>Piles List</title>
     <link rel="stylesheet" href="/media/css/bootstrap.min.css"/>
     <link rel="stylesheet" href="/media/css/main.css"/>
 </head>
 <body>
+
 <header>
-    <nav class="navbar navbar-light bg-info navbar-expand-lg">
+    <nav class="navbar navbar-light bg-info navbar-expand-md">
 
         <a class="navbar-brand" href="http://localhost:8090/home"><img src="/media/images/logo.jpg" width="50" height="50" alt=""> pilesAPI</a>
 
@@ -24,7 +25,7 @@
                 <li class="nav-item">
                     <a class="nav-link" href="/user"> STRONA GŁÓWNA </a>
                 </li>
-                <li class="nav-item active">
+                <li class="nav-item">
                     <a class="nav-link" href="/pile/calculate"> OBLICZENIA </a>
                 </li>
                 <li class="nav-item dropdown">
@@ -34,10 +35,10 @@
                         <a class="dropdown-item" href="/investition/form"> Dodaj nową inwestycję </a>
                     </div>
                 </li>
-                <li class="nav-item dropdown">
+                <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="/pile/page"> Pokaż tabelę pali </a>
+                        <a class="dropdown-item" href="/pile/page"> Pokaż tabele pali </a>
                         <a class="dropdown-item" href="/pile/form"> Zapisz nowy pal </a>
                     </div>
                 </li>
@@ -52,53 +53,36 @@
                 </li>
             </ul>
         </div>
-
     </nav>
 </header>
 
 <div class = "container">
-<form:form modelAttribute="pile" method="post">
-    <div class="row">
-        <div class="col-sm-6">
-            <p><br><b>UZUPEŁNIJ PARAMETRY PALA:</b><br/>
+    <br><h1 align="center">TABELA PALI DLA INWESTYCJI ${investition.investitionSignature}</h1>
+    <p>${investition.investitionTitle}:</p>
+    <p>${investition.investitionDecription}</p>
+    <table border="3" width="100%" cellpadding="4" cellspacing="1" bgcolor="#f8f8ff">
+        <tr>
+<%--            <c:if test="${investition == null}">
 
-            <p>Sygnatura pala:<br/>
-                <input type="text" name="signature"/> <form:errors path="signature" cssClass="error"/></p>
-
-            <p>Średnica pala: <br/>
-                <input type="number" min="0.1" step="0.1" name="diameter"/> m <form:errors path="diameter" cssClass="error"/></p>
-
-            <p>Wymagana nośność: <br/>
-                <input type="text" name="bearingCapacity"/> kN <form:errors path="bearingCapacity" cssClass="error"/></p>
-
-            <p>Typ pala: <br/>
-                <form:select path="type">
-                    <form:options items="${type}"/>
-                </form:select>
-
-            <p>Obciążenia próbne: <br/>
-                <input type="checkbox" name="loadTest"/> TAK <br/>
-            </p>
-        </div>
-        <div class="col-sm-6">
-            <p><br/><b>UZUPEŁNIJ PARAMETRY GRUNTU:</b><br/>
-
-            <p>Rodzaj gruntu: <br/>
-                <form:select path="ground">
-                    <form:options items="${ground}"/>
-                </form:select>
-
-            <p>Poziom zwierciadła wód gruntowych: <br/>
-                <input type="text" name="zwg"/> m.p.p.t <form:errors path="zwg" cssClass="error"/></p>
-
-            <p>Wskaźnik zagęszczenia gruntów niespoistych ID: <br/>
-                <form:select path="zag">
-                    <form:options items="${ID}"/>
-                </form:select>
-                <br/><br/><input type="submit" value="Zatwierdź" class="btn"/>
-        </div>
-    </div>
-</form:form>
+            </c:if>--%>
+            <td align="center"><b>NUMER PALA</b></td>
+            <td align="center"><b>ŚREDNICA [m]</b></td>
+            <td align="center"><b>DŁUGOŚĆ [m]</b></td>
+            <td align="center"><b>NOŚNOŚĆ [kN]</b></td>
+            <td align="center"><b>EDYTUJ</b></td>
+            <td align="center"><b>USUŃ</b></td>
+        </tr>
+        <c:forEach items="${allInvestitionPiles}" var="pile">
+            <tr>
+                <td align="center"><c:out value="${pile.signature}"/></td>
+                <td><c:out value="${pile.diameter}"/></td>
+                <td><c:out value="${pile.length}"/></td>
+                <td><c:out value="${pile.bearingCapacity}"/></td>
+                <td align="center"><a href="/pile/edit?id=${pile.id}"><input type="submit" value="EDYTUJ" class="btn3"/></a></td>
+                <td align="center"><a href="/pile/delete?id=${pile.id}"><input type="submit" value="USUŃ" class="btn4" /></a></td>
+            </tr>
+        </c:forEach>
+    </table>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -107,3 +91,4 @@
 
 </body>
 </html>
+
