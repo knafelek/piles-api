@@ -1,18 +1,19 @@
 # piles-api
 
-
-
 ### Aplikacja do obliczeń geotechnicznych
 
 ---
 
 - Obliczenia geotechniczne
 
-        - Obliczanie nośności pala wciskanego obciążonego głównie pionowo
-        - Wyznaczanie wymaganej długości pala dla wymaganej nośności
+        - Obliczanie nośności pali fundamentowych wciskanych obciążonych głównie pionowo
+        - Wyznaczanie minimalnej długości pala dla wymaganej nośności
 
 - Przechowywanie danych
 
         - Obsługa wielu inwestycji budowlanych
-        - Archiwiziwanie danych dotyczących robót palowych dla danej inwestycji
+        - Archiwizowanie danych dotyczących wyników obliczeń oraz wykonanych 
+          robót palowych dla poszczególnych inwestycji
 -----
+### Diagram tabel bazy danych
+![](.\src\main\webapp\media\images\diagram.jpg)
