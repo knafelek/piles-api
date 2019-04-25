@@ -39,6 +39,7 @@
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
                         <a class="dropdown-item" href="#"> Pokaż tabele pali </a>
+                        <a class="dropdown-item" href="/pile/form"> Zapisz nowy pal </a>
                     </div>
                 </li>
                 <li class="nav-item">
@@ -56,7 +57,6 @@
 </header>
 
 <div class = "container">
-<form:form modelAttribute="investition" method="get">
     <br><h1 align="center">TWOJE INWESTYCJE</h1>
     <table border="3" width="100%" cellpadding="4" cellspacing="1" bgcolor="#f8f8ff">
         <tr>
@@ -67,7 +67,7 @@
             <td align="center"><b>EDYTUJ</b></td>
             <td align="center"><b>USUŃ</b></td>
         </tr>
-            <c:forEach items="${findallinvestitions}" var="invest">
+            <c:forEach items="${allInvestition}" var="invest">
             <tr>
                 <td align="center"><c:out value="${invest.investitionSignature}"/></td>
                 <td><c:out value="${invest.investitionTitle}"/></td>
@@ -78,7 +78,6 @@
             </tr>
             </c:forEach>
     </table>
-</form:form>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

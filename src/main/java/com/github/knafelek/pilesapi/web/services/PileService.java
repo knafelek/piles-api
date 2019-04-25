@@ -1,5 +1,6 @@
 package com.github.knafelek.pilesapi.web.services;
 
+import com.github.knafelek.pilesapi.domain.model.Pile;
 import com.github.knafelek.pilesapi.domain.repositories.PileRepository;
 import com.github.knafelek.pilesapi.dtos.PileCalculateDTO;
 import org.slf4j.Logger;
@@ -7,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Service
 public class PileService {

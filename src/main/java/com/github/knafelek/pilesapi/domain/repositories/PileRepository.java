@@ -1,17 +1,15 @@
 package com.github.knafelek.pilesapi.domain.repositories;
 
-import com.github.knafelek.pilesapi.domain.model.Investition;
 import com.github.knafelek.pilesapi.domain.model.Pile;
-import com.github.knafelek.pilesapi.domain.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
-import org.springframework.data.repository.query.Param;
 
 import java.util.List;
 
 public interface PileRepository extends JpaRepository<Pile, Long> {
 
-    @Query("select p from Pile p where p.investition = :investition")
-    List<Pile> getPileByInvestition(@Param("investition") Investition investition);
+
+    @Query(value ="select p.* from piles p join investitions i on p.investition_id = i.id join users_investitions_list ui on i.id = ui.investitions_list_id join users u on ui.user_id = u.id where u.username=?1", nativeQuery = true)
+    List<Pile> getAllPilesByUsername (String username);
 
 }

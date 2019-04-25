@@ -1,5 +1,11 @@
 package com.github.knafelek.pilesapi.web.controllers;
 
+import com.github.knafelek.pilesapi.domain.model.Investition;
+import com.github.knafelek.pilesapi.domain.model.Pile;
+import com.github.knafelek.pilesapi.domain.model.User;
+import com.github.knafelek.pilesapi.domain.repositories.InvestitionRepository;
+import com.github.knafelek.pilesapi.domain.repositories.PileRepository;
+import com.github.knafelek.pilesapi.domain.repositories.UserRepository;
 import com.github.knafelek.pilesapi.dtos.PileCalculateDTO;
 import com.github.knafelek.pilesapi.web.services.PileService;
 import org.springframework.stereotype.Controller;
@@ -8,6 +14,7 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.security.Principal;
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,9 +23,15 @@ import java.util.List;
 public class PileController {
 
     private PileService pileService;
+    private PileRepository pileRepository;
+    private UserRepository userRepository;
+    private InvestitionRepository investitionRepository;
 
-    public PileController(PileService pileService) {
+    public PileController(PileService pileService, PileRepository pileRepository, UserRepository userRepository, InvestitionRepository investitionRepository) {
         this.pileService = pileService;
+        this.pileRepository = pileRepository;
+        this.userRepository = userRepository;
+        this.investitionRepository = investitionRepository;
     }
 
     @GetMapping("/calculate")
@@ -52,6 +65,13 @@ public class PileController {
                 "Pal Vibro");
     }
 
+
+    @ModelAttribute("allInvestition")
+    public List<Investition> findAllInvestitions (Principal principal){
+        User user = userRepository.findByUsername(principal.getName()).get();
+        return user.getInvestitionsList();
+    }
+
     @ModelAttribute("ground")
     public List<String> checkGround(){
         return Arrays.asList("Żwir, pospółka",
@@ -60,6 +80,34 @@ public class PileController {
                 "Piasek pylasty");
     }
 
+    @GetMapping("/form")
+    public String preparePilePage(Model model) {
+        Pile pile = new Pile();
+        model.addAttribute("pile", pile);
+        return "pile-form";
+    }
 
+    @PostMapping("/form")
+    public String savePile(@Valid @ModelAttribute("pile") Pile pile,  BindingResult result, Long investitionId){
+        if (result.hasErrors()) {
+            return "pile-form";
+        }
+        Investition investition = investitionRepository.getOne(investitionId);
+        pile.setInvestition(investition);
+        pileRepository.save(pile);
+        return "piles-page";
+    }
+
+    @GetMapping("/page")
+    public String showPilesPage(Model model) {
+        Pile pile = new Pile();
+        model.addAttribute("pile", pile);
+        return "piles-page";
+    }
+
+    @ModelAttribute("allPiles")
+    public List<Pile> findAllPiles (Principal principal){
+        return pileRepository.getAllPilesByUsername(principal.getName());
+    }
 
 }
