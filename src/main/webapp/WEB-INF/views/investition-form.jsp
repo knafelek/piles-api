@@ -55,17 +55,21 @@
     </nav>
 </header>
 <div class = "container">
-    <form:form modelAttribute="investition" method="post">
-        <br><h1 align="center">UZUPEŁNIJ DANE INWESTYCJI</h1><br>
-        <p>Numer projektu:<br/>
-            <form:input type="text" path="investitionSignature"/> <form:errors path="investitionSignature" cssClass="error"/></p>
-        <p>Nazwa inwestycji: <br/>
-            <form:input type="text" path="investitionTitle"/> <form:errors path="investitionTitle" cssClass="error"/></p>
-        <p>Opis inwestycji: <br/>
-            <form:textarea path="investitionDecription"/> <form:errors path="investitionDecription" cssClass="error"/></p>
-        <form:hidden path="id"></form:hidden>
-        <input type="submit" value="Zapisz" class="btn"/>
-    </form:form>
+    <div class = "row">
+        <div class="col-sm-12">
+            <form:form modelAttribute="investition" method="post">
+                <br><h1 align="center">UZUPEŁNIJ DANE INWESTYCJI</h1><br>
+                <p>Numer projektu:<br/>
+                    <form:input type="text" path="investitionSignature" cssClass="col-10"/> <form:errors path="investitionSignature" cssClass="error"/></p>
+                <p>Nazwa inwestycji: <br/>
+                    <form:input type="text" path="investitionTitle" cssClass="col-10"/> <form:errors path="investitionTitle" cssClass="error"/></p>
+                <p>Opis inwestycji: <br/>
+                    <form:textarea path="investitionDecription" cssClass="col-10"/> <form:errors path="investitionDecription" cssClass="error"/></p>
+                <form:hidden path="id"></form:hidden>
+                <input type="submit" value="Zapisz" class="btn"/>
+            </form:form>
+        </div>
+    </div>
 </div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

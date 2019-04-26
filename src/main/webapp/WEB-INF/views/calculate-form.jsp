@@ -58,18 +58,19 @@
 
 <div class = "container">
 <form:form modelAttribute="pile" method="post">
+    <br><h1>OBLICZ DŁUGOŚĆ PALA</h1>
     <div class="row">
         <div class="col-sm-6">
             <p><br><b>UZUPEŁNIJ PARAMETRY PALA:</b><br/>
 
             <p>Sygnatura pala:<br/>
-                <input type="text" name="signature"/> <form:errors path="signature" cssClass="error"/></p>
+                <input type="text" name="signature" class="col-5"/> <form:errors path="signature" cssClass="error"/></p>
 
             <p>Średnica pala: <br/>
-                <input type="number" min="0.1" step="0.1" name="diameter"/> m <form:errors path="diameter" cssClass="error"/></p>
+                <input type="number" min="0.1" step="0.1" name="diameter" class="col-5"/> m <form:errors path="diameter" cssClass="error"/></p>
 
             <p>Wymagana nośność: <br/>
-                <input type="text" name="bearingCapacity"/> kN <form:errors path="bearingCapacity" cssClass="error"/></p>
+                <input type="text" name="bearingCapacity" class="col-5"/> kN <form:errors path="bearingCapacity" cssClass="error"/></p>
 
             <p>Typ pala: <br/>
                 <form:select path="type">
@@ -89,13 +90,13 @@
                 </form:select>
 
             <p>Poziom zwierciadła wód gruntowych: <br/>
-                <input type="text" name="zwg"/> m.p.p.t <form:errors path="zwg" cssClass="error"/></p>
+                <input type="text" name="zwg" class="col-4"/> m.p.p.t <form:errors path="zwg" cssClass="error"/></p>
 
             <p>Wskaźnik zagęszczenia gruntów niespoistych ID: <br/>
                 <form:select path="zag">
                     <form:options items="${ID}"/>
                 </form:select>
-                <br/><br/><input type="submit" value="Zatwierdź" class="btn"/>
+                <br/><br/><input type="submit" value="OBLICZ" class="btn"/>
         </div>
     </div>
 </form:form>

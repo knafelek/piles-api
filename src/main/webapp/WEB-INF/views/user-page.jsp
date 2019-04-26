@@ -61,18 +61,18 @@
     <div class="row">
         <div class="col-sm-4"><br/>
             <figure>
-                <img src="/media/images/bob.png" class="img-fluid images" alt="">
+                <br/><br/><br/><img src="/media/images/bob.png" class="img-fluid images" alt="">
             </figure>
         </div>
 
         <div class="col-sm-8">
             <span>
-                <br>
+                <br/><br/><br/>
                 <h1> pilesAPI </h1>
                 <br/>
                 <h4>Aplikacja do obliczeń geotechnicznych</h4>
-                <br/>
-                <h5>WITAJ NA SWOIM PROFILU</h5>
+                <br/><br/>
+                <h3>WITAJ NA SWOIM PROFILU!</h3>
 
             </span>
         </div>

@@ -61,20 +61,20 @@
         <form:hidden path="id"/>
         <div class="row">
             <div class="col-sm-12">
-                <br><h1 align="center">UZUPEŁNIJ PARAMETRY PALA</h1><br>
-
+                <br><h1 align="center">UZUPEŁNIJ PARAMETRY PALA</h1>
                 <p>Sygnatura pala:<br/>
-                    <form:input path="signature"/> <form:errors path="signature" cssClass="error"/></p>
+                    <form:input path="signature" cssClass="col-4"/> <form:errors path="signature" cssClass="error"/></p>
 
                 <p>Długość pala: <br/>
-                    <form:input path="length" type="number" min="4.0" step="0.5"/> <form:errors path="length" cssClass="error"/></p>
+                    <form:input path="length" type="number" min="4.0" step="0.5" cssClass="col-4"/> <form:errors path="length" cssClass="error"/></p>
 
                 <p>Średnica pala: <br/>
-                    <form:input path="diameter" type="number" min="0.1" step="0.1"/> m <form:errors path="diameter" cssClass="error"/></p>
+                    <form:input path="diameter" type="number" min="0.1" step="0.1" cssClass="col-4"/> m <form:errors path="diameter" cssClass="error"/></p>
 
                 <p>Wymagana nośność: <br/>
-                    <form:input path="bearingCapacity" type="text" /> kN <form:errors path="bearingCapacity" cssClass="error"/></p>
+                    <form:input path="bearingCapacity" type="text" cssClass="col-4"/> kN <form:errors path="bearingCapacity" cssClass="error"/></p>
 
+                <p>Inwestycja: <br/>
                 <select name="investitionId">
                     <c:forEach items="${allInvestition}" var="inv">
                         <option value="${inv.id}">${inv.investitionSignature}</option>
