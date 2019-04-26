@@ -38,7 +38,7 @@
                 <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="/pile/page"> Pokaż tabele pali </a>
+                        <a class="dropdown-item" href="/pile/page"> Pokaż tabelę pali </a>
                         <a class="dropdown-item" href="/pile/form"> Zapisz nowy pal </a>
                     </div>
                 </li>
@@ -58,8 +58,25 @@
 
 <div class = "container">
     <br><h1 align="center">TABELA PALI DLA INWESTYCJI ${investition.investitionSignature}</h1>
-    <p>${investition.investitionTitle}:</p>
-    <p>${investition.investitionDecription}</p>
+    <table>
+        <tr>
+            <td>
+                <b>Nazwa inwestycji:  </b>
+            </td>
+            <td>
+                ${investition.investitionTitle}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>Opis inwestycji:</b>
+            </td>
+            <td>
+                ${investition.investitionDecription}
+            </td>
+        </tr>
+    </table><br>
+
     <table border="3" width="100%" cellpadding="4" cellspacing="1" bgcolor="#f8f8ff">
         <tr>
 <%--            <c:if test="${investition == null}">

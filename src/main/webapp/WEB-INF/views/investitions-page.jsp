@@ -38,7 +38,7 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" role="button" aria-expanded="false" id="submenu"> BAZA DANYCH </a>
                     <div class="dropdown-menu" aria-labelledby="submenu" aria-haspopup="true">
-                        <a class="dropdown-item" href="/pile/page"> Pokaż tabele pali </a>
+                        <a class="dropdown-item" href="/pile/page"> Pokaż tabelę pali </a>
                         <a class="dropdown-item" href="/pile/form"> Zapisz nowy pal </a>
                     </div>
                 </li>
@@ -72,9 +72,8 @@
                 <td align="center"><c:out value="${invest.investitionSignature}"/></td>
                 <td><c:out value="${invest.investitionTitle}"/></td>
                 <td align="center"><a href="/pile/list?investitionId=${invest.id}"><input type="submit" value="WYBIERZ" class="btn" /></a></td>
-<%--                <td><c:out value="${invest.investitionDecription}"/></td>--%>
-                <td align="center"><input type="submit" value="EDYTUJ" class="btn3" /></td>
-                <td align="center"><input type="submit" value="USUŃ" class="btn4" /></td>
+                <td align="center"><a href="/investition/edit?id=${invest.id}"><input type="submit" value="EDYTUJ" class="btn3" /></a></td>
+                <td align="center"><a href="/investition/delete?id=${invest.id}"><input type="submit" value="USUŃ" class="btn4" /></a></td>
             </tr>
             </c:forEach>
     </table>

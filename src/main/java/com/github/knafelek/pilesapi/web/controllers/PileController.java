@@ -83,8 +83,7 @@ public class PileController {
     }
 
     @GetMapping("/form")
-    public String preparePilePage(Model model) {
-        Pile pile = new Pile();
+    public String preparePilePage(Model model, Pile pile) {
         model.addAttribute("pile", pile);
         return "pile-form";
     }
@@ -112,7 +111,6 @@ public class PileController {
         return pileRepository.getAllPilesByUsername(principal.getName());
     }
 
-    //
     @GetMapping("/edit")
     public String editPile(Model model, Long id){
         Pile pile = pileRepository.getOne(id);

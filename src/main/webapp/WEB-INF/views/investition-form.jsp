@@ -56,14 +56,14 @@
 </header>
 <div class = "container">
     <form:form modelAttribute="investition" method="post">
-        <br><h1 align="center">DODAJ NOWĄ INWESTYCJĘ</h1><br>
-        <p><br><b>UZUPEŁNIJ DANE INWESTYCJI:</b><br/>
+        <br><h1 align="center">UZUPEŁNIJ DANE INWESTYCJI</h1><br>
         <p>Numer projektu:<br/>
-            <input type="text" name="investitionSignature"/> <form:errors path="investitionSignature" cssClass="error"/></p>
+            <form:input type="text" path="investitionSignature"/> <form:errors path="investitionSignature" cssClass="error"/></p>
         <p>Nazwa inwestycji: <br/>
-            <input type="text" name="investitionTitle"/> <form:errors path="investitionTitle" cssClass="error"/></p>
+            <form:input type="text" path="investitionTitle"/> <form:errors path="investitionTitle" cssClass="error"/></p>
         <p>Opis inwestycji: <br/>
-            <input type="text" name="investitionDecription"/> <form:errors path="investitionDecription" cssClass="error"/></p>
+            <form:textarea path="investitionDecription"/> <form:errors path="investitionDecription" cssClass="error"/></p>
+        <form:hidden path="id"></form:hidden>
         <input type="submit" value="Zapisz" class="btn"/>
     </form:form>
 </div>

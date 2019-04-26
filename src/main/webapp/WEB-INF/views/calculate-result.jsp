@@ -64,7 +64,7 @@
             <a href="/pile/calculate"><input type="submit" value="POWRÓT DO OBLICZEŃ" class="btn2"/></a>
         </div>
         <div class="col-sm-6">
-            <a href="#"><input type="submit" value="ZAPISZ DO BAZY DANYCH" class="btn2" /></a>
+            <a href="/pile/form?signature=${pile.signature}&diameter=${pile.diameter}&bearingCapacity=${pile.bearingCapacity}&loadTest=${pile.loadTest}&length=${pileLength}"><input type="submit" value="ZAPISZ DO BAZY DANYCH" class="btn2" /></a>
         </div>
     </div>
 

@@ -44,7 +44,7 @@
                     <a class="nav-link" href="#"> REJESTRACJA </a>
                 </li>
                 <li class="nav-item disabled">
-                    <a class="nav-link" href="#"> ZALOGUJ </a>
+                    <a class="nav-link" href="/login"> ZALOGUJ </a>
                 </li>
                 <li class="nav-item disabled">
                     <a class="nav-link" href="/logout"> WYLOGUJ </a>

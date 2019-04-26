@@ -16,4 +16,4 @@
           robót palowych dla poszczególnych inwestycji
 -----
 ### Diagram tabel bazy danych
-![](.\src\main\webapp\media\images\diagram.jpg)
+![](/media/diagram.jpg)

@@ -81,7 +81,7 @@
                 <h5>Przechowywanie danych</h5>
                     <ul>
                         <li>Obsługa wielu inwestycji budowlanych</li>
-                        <li>Archiwiziwanie danych dotyczących robót palowych dla danej inwestycji</li>
+                        <li>Archiwizowanie danych dotyczących wyników obliczeń oraz wykonanych robót palowych dla poszczególnych inwestycji</li>
                     </ul>
 
                 <br><h4>ZALOGUJ SIĘ LUB ZAREJESTRUJ!</h4>

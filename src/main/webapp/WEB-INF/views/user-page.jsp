@@ -22,7 +22,7 @@
         <div class = "collapse navbar-collapse" id="mainmenu">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a class="nav-link disabled" href="#"> STRONA GŁÓWNA </a>
+                    <a class="nav-link disabled" href="/home"> STRONA GŁÓWNA </a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/pile/calculate"> OBLICZENIA </a>

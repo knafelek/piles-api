@@ -6,7 +6,9 @@ import org.springframework.web.bind.annotation.GetMapping;
 import javax.persistence.*;
 
 @Entity
-@Table(name="piles")
+@Table(name = "piles", uniqueConstraints = {
+        @UniqueConstraint(name = "Unique_signature_and_investition_id", columnNames = {"signature", "investition_id"})}
+        )
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,13 +18,13 @@ public class Pile {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false, unique=true)
+    @Column(nullable = false)
     private Long signature;
     @Column(columnDefinition = "NUMERIC(15,2)")
     private Double diameter;
     @Column(columnDefinition = "NUMERIC(15,2)")
     private Double length;
-    @Column(name="bearing_capacity", columnDefinition = "NUMERIC(25,2)")
+    @Column(name = "bearing_capacity", columnDefinition = "NUMERIC(25,2)")
     private Double bearingCapacity;
     private Boolean loadTest;
 

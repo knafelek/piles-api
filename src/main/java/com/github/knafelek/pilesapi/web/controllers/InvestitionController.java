@@ -62,33 +62,36 @@ public class InvestitionController {
         return "investitions-page";
     }
 
-
-    //ZAPYTAć
     @GetMapping("/edit")
     public String editInvestition(Model model, Long id){
         Investition investition = investitionRepository.getOne(id);
         model.addAttribute("investition", investition);
+        model.addAttribute("allInvestition", investition.getPilesList());
         return "investition-form";
     }
 
-    @PostMapping("/edit")
-    public String saveEditedInvestitionsaveInvestition(@Valid @ModelAttribute("investition") Investition investition, BindingResult result, Principal principal){
+    //ZAPYTAć
+    @PostMapping("/edit") //?????? nie działa
+    public String saveEditedInvestition(@Valid @ModelAttribute("investition") Investition investition, BindingResult result, Principal principal){
         if (result.hasErrors()) {
             return "investition-form";
         }
         User user = userRepository.findByUsername(principal.getName()).get();
         investitionRepository.save(investition);
-        user.getInvestitionsList().add(investition);
-        userRepository.save(user);
         return "redirect:/investition/page";
     }
 
-    @GetMapping("/delete")
-    public String deleteInvestition(Model model, Long id){
+    @GetMapping("/delete") //??? nie działa
+    public String deleteInvestition(Model model, Long id, Principal principal){
         Investition investition = investitionRepository.getOne(id);
+        model.addAttribute("investition", investition); //
+        model.addAttribute("allInvestition", investition.getPilesList()); //
         for (Pile pile : investition.getPilesList()) {
             pileRepository.delete(pile);
         }
+        User user = userRepository.findByUsername(principal.getName()).get();
+        user.getInvestitionsList().remove(investition);
+        userRepository.save(user);
         investitionRepository.delete(investition);
         return"redirect:/investition/page";
     }
